@@ -1,0 +1,31 @@
+---
+title: "burk"
+author: "burkay duran"
+date: "February 20, 2019"
+output:
+  html_document: default
+  pdf_document: default
+  word_document: default
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## RHomework1
+
+Hello, I'm Burkay.I am 24 years old, born in Istanbul I am a 4th year business administration student at MEF University. I am interested in coding.
+
+# My Coding History
+
+I started with learning python first with one of my addicted friend wants to learn coding with me. We made 2 desktop apps with him and the 2nd one was masterpiece for our level. It was a stock following program that helps you measuring your stock, your costs, your sales also. We made it for a customer ofc and sold it to customer. It was keeping data somewhere hidden in C:\\ where you can only open with our software, otherwise data needs a password for open it. That was a good deal for us and we started developing our coding skills to become better. Its been 2 years i havent written a single code on python bcs of work uni etc. but i started coding on python again. 
+
+## My interest in Data Analytics
+I also realised that not only coding, the data analytics will become very important in the future so i decided to learn data analytics. I took business intelligence and forecasting lectures in school to learn the basics of it and took some courses in udemy (actually, to be honest, torrent courses) to learn how to do data analytics and data analytic libraries in python. One of the courses helped me improve my data analytics a lot which was given by Amazon's old recommendation system writer. I still try to improve my data analytics skills , mostly understanding the outcomes. I think that my statistics side is not good so i try to learn statistics better.
+
+
+## Useful Video For R Finance 
+
+The R studio Conference by Alex Hayes named "Solving the model representation problem with broom" was pretty delightful and teaching for me on problem solving by using R :
+
+https://resources.rstudio.com/rstudio-conf-2019/solving-the-model-representation-problem-with-broom
