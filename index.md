@@ -20,4 +20,4 @@ I just uploaded my homework to my github page. + [Here](burkayduran.html)
 + This week we will have our 2nd Project Presentation and prepared [this](FinalReportv2.html) project report about what we have done so far. 
 
 ## May 8
-+ this week I made an alaysis about #herseycokguzelolacak in twitter to understand people's feelings about re-election. I will develop further analysis in next weeks. you can view my analysis at [https://github.com/pjournal/mef01-burkayduran/blob/master/Ekrem%20%C4%B0mamo%C4%9Flu.Rmd]
++ this week I made an alaysis about #herseycokguzelolacak in twitter to understand people's feelings about re-election. I will develop further analysis in next weeks. you can view my analysis at here <https://github.com/pjournal/mef01-burkayduran/blob/master/Ekrem%20%C4%B0mamo%C4%9Flu.Rmd>
