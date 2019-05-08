@@ -1,0 +1,96 @@
+---
+title: "EkremÄ°mamoÄŸlu"
+author: "Burkay Duran"
+date: "May 8, 2019"
+output:
+  html_document: default
+  pdf_document: default
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## R Markdown
+
+This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+
+We wanted to experience how people in Turkey feel about Ekrem İmamoglu and Re-Election process of IBB and started our work by calling libraries.
+
+```{r cars}
+options(stringsAsFactors=FALSE)
+library(httpuv)
+library(plyr)
+library(tidyverse)
+library(lubridate)
+library(rtweet)
+library(tidytext)
+library(wordcloud)
+library(tm)
+
+
+```
+
+My twitter developer account is not activated yet so I cannot have access to everything i want but I searched for the most popular # for elections which is #HerseyCokGuzelOlacak . I can't make a sentiment analysis in Turkish language yet so I chose the language as English to bring English tweets in that hashtag
+
+
+```{r pressure, echo=FALSE}
+tweets_raw <- search_tweets("#HerseyCokGuzelOlacak", n = 5000, include_rts = FALSE, lang = "en",retryonratelimit = TRUE)
+
+glimpse(tweets_raw)
+
+
+
+```
+
+That gave me the 5000 tweets from Twitter's random tweet pool for the hashtag. Then I wanted to see who used the hashtag most
+```{r pressure, echo=FALSE}
+
+tweets_raw %>% count(screen_name,sort=TRUE) %>% slice(1:10) %>% knitr::kable()
+
+
+```
+as it is seen in the table some people used the hashtag more than one tweet. Then I tried to make an analysis about words used most in those tweets 
+
+
+
+```{r pressure, echo=FALSE}
+tweet_words <-
+  tweets_raw %>% 
+  select(text) %>%
+  unnest_tokens(word,text,token = "tweets") %>% 
+  filter(!word %in% stop_words$word,
+         !word %in% str_remove_all(stop_words$word, "'"),
+         str_detect(word, "[a-z]")) 
+tweet_words %>% count(word,sort=TRUE) %>% slice(1:20) %>% knitr::kable()
+
+
+```
+
+
+
+I saw that people using that hashtag mentioned about Ekrem İmamoglu most to adumbrate their support to him. 
+
+then I made a wordcloud of the most used words 
+
+```{r pressure, echo=FALSE}
+wordcloud(tweet_words$word,max.words = 100)
+sentiments %>% filter(lexicon=="bing") %>% slice(1:10) %>% knitr::kable()
+
+```
+
+then I made a sentiment analysis to the words used in tweets and try to understand how people feel about situation and found that sad feelings are majority
+
+```{r pressure, echo=FALSE}
+entiment_words <-
+  tweet_words %>% 
+  left_join(.,
+            sentiments %>% filter(lexicon=="bing") %>% select(word,sentiment), 
+            by="word"
+  ) %>% 
+  filter(!is.na(sentiment)) 
+
+sentiment_words %>% slice(1:10) %>% knitr::kable()
+
+
+```
