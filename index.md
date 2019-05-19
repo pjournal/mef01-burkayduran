@@ -23,4 +23,4 @@ I just uploaded my homework to my github page. + [Here](burkayduran.html)
 + this week I made an alaysis about #herseycokguzelolacak in twitter to understand people's feelings about re-election. I will develop further analysis in next weeks. you can view my analysis at here [here](https://github.com/pjournal/mef01-burkayduran/blob/master/Ekrem%20%C4%B0mamo%C4%9Flu.Rmd)
 
 
-our final of final report is  [here](https://github.com/pjournal/mef01-burkayduran/blob/master/final-burkay.cemal.html)
+Our final form of the final report is [here](final-burkay.cemal.html)
